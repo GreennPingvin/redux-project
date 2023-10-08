@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Card = ({ children, isFeatured, className }) => {
   return (
     <div
-      className={`card${isFeatured ? " card--featured" : ""}${
+      className={`card ${isFeatured ? "card--featured" : ""}${
         className ? " " + className : ""
       }`}
     >
