@@ -1,11 +1,11 @@
-import { combineReducers, createStore } from "redux";
-import { positionsReducer } from "./positions/positions-reducer";
-import { composeWithDevTools } from "@redux-devtools/extension";
-import { filtersReducer } from "./filters/filters-reducer";
+import { combineReducers } from "redux";
+import { positionsReducer } from "../features/Positions/positions-slice";
+import { configureStore } from "@reduxjs/toolkit";
+import { filtersReducer } from "../features/Filters/filters-slice";
 
 const rootReducer = combineReducers({
   positions: positionsReducer,
   filters: filtersReducer,
 });
 
-export const store = createStore(rootReducer, composeWithDevTools());
+export const store = configureStore({ reducer: rootReducer });
